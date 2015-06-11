@@ -1,3 +1,5 @@
+#Image J multiplot data must be loaded into R without a header.
+#Occassionally this function will choke on a dataset - you can temporarily get around this by using a subset of your data.
 
 norm_ave_plot2 = function(plot_data){
 	par(mfrow=c(2,2))
