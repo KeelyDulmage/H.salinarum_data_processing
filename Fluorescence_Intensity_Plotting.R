@@ -1,7 +1,6 @@
 #Image J multiplot data must be loaded into R without a header.
-#Occassionally this function will choke on a dataset - you can temporarily get around this by using a subset of your data.
 
-norm_ave_plot2 = function(plot_data){
+norm_ave_plot3 = function(plot_data){
 	par(mfrow=c(2,2))
 	plot_data2=plot_data
 	plot_data3=data.frame(matrix(nrow=501,ncol=dim(plot_data2)[2]/2))
@@ -38,7 +37,8 @@ norm_ave_plot2 = function(plot_data){
 		max_i=max(plot_data3[,i])
 		max_table[i,2]=max_i
 		m_index=which(plot_data3[,i]== max_i)
-		max_table[i,1]=x_val[m_index]
+		m_index2=m_index[1]
+		max_table[i,1]=x_val[m_index2]
 	}
 	hist(max_table$Position, xlab='Fraction of cell length',cex.lab=1.5, cex.axis=1.5, col='gray', main='')
 	
